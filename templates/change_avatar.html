@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style/style2.css') }}">
+    <title>Avatar</title>
+</head>
+<body style="width: 300px; margin: auto;">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul style="color: red;">
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <img src="./uploads/{{user_avatar}}" alt="User's avatar" id="avatar" style="width: 300px; height: 300px; border-radius: 50px;">
+    <br>
+    <hr>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="avatar-image" id="avatar-input" accept="image/*">
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <hr>
+    <span>Back to <a href="/">home page</a></span>
+    <script>
+        const image = document.querySelector("#avatar");
+        const input = document.querySelector("#avatar-input");
+
+        input.addEventListener("change", (e) => {
+            const selected_src = URL.createObjectURL(e.target.files[0]);
+            image.src = selected_src;
+        })
+    </script>
+</body>
+</html>

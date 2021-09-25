@@ -1,0 +1,89 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin:0;
+    background-image: linear-gradient(to right,#2b5876,#4e4376);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* changepwd */
+.ChangepwdSystem {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    background-color:white;
+    border: 0px solid;
+    border-radius: 6px;
+    padding: 4%;  
+    box-sizing: border-box;
+    box-shadow: 0 6px 12px 0 rgba(3, 3, 3, 0.2);
+}
+.menu{
+    background-color: black;
+    opacity: 0.8;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+}
+.menu a {
+    float: left;
+    color: rgb(202, 202, 202);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    width: 10%;
+  }
+  
+.menu a:hover {
+    opacity: 0.5;
+}
+.Changepwdsystem {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    background-color:white;
+    border: 0px solid;
+    border-radius: 6px;
+    padding: 4%;  
+    box-sizing: border-box;
+    box-shadow: 0 6px 12px 0 rgba(3, 3, 3, 0.2);
+}
+input[type=username],input[type=password],input[type=cpassword] {
+    width: 95%;
+    padding: 12px 10px;
+    margin: 10px 0;
+    display:block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-style: italic;
+    opacity: 0.7;
+    text-decoration-color: blanchedalmond;
+}
+
+div[class=si-icon] {
+    width:100px;
+    font-size: 40px;
+    margin:auto;
+    padding: 5%;
+    box-sizing: border-box;
+    background: linear-gradient(to right,#2b5876,#4e4376);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+input[type=submit]{
+    color: white;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    width: 95%;
+    padding: 12px 10px;
+    margin: 10px 0;
+    display:block;
+    border: 1px solid #2b5876;
+    border-radius: 4px;
+    cursor: pointer;
+    background: rgb(26, 35, 80);
+    font-size: 20px;
+}

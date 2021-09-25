@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tommie</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='style/style.css') }}">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div class='menu'>
+            <a class="active" href="/index"><i id="home" class="fas fa-home"></i></a>
+            <a href="/changeavatar"><i class="far fa-user-circle"></i></a>
+            <a href="/changepwd"><i class="fas fa-lock" content="changepassword"></i></a>
+        </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p  id="welcome">{{msg}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+
+
+        <h1> Tomas Luift </h1>
+        <h2><i> Your Big Black and white Cat</i></h2>
+        <h3><q><i>Meoow</i></q></h3>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class ="column">
+                    <img src="{{ url_for('static', filename='pics/01.jpg') }}" alt="Tommie" class = "mimage">
+                    <img src="{{ url_for('static', filename='pics/02.jpg') }}" alt="Tommie" class = "mimage">
+                    <img src="{{ url_for('static', filename='pics/03.jpg') }}" alt="Tommie" class = "mimage">
+                </div>
+                <div class="column">        
+                    <img src="{{ url_for('static', filename='pics/04.jpg') }}" alt="Tommie" class = "mimage">
+                    <img src="{{ url_for('static', filename='pics/05.jpg') }}" alt="Tommie" class = "mimage">
+                    <img src="{{ url_for('static', filename='pics/06.jpg') }}" alt="Tommie" class = "mimage">
+                </div> 
+                <div class="column">
+                    <img src="{{ url_for('static', filename='pics/07.jpg') }}" alt="Tommie" class = "mimage">
+                    <img src="{{ url_for('static', filename='pics/08.jpg') }}" alt="Tommie" class = "mimage">
+                    <img src="{{ url_for('static', filename='pics/09.jpg') }}" alt="Tommie" class = "mimage">
+                </div>
+            </div>
+            <img id ="lastphoto" src="{{ url_for('static', filename='pics/10.jpg') }}" alt="Tommie" class = "mimage">
+        </div>
+        <form class="logout" action="/logout" method="post">
+            <input type="submit" value="Log Out">
+        </form>
+    <footer>
+        <hr>
+        <p style="text-align:center;font-size:20px;color:rgb(43, 38, 31)"><i>Copyright &copy; KitchenPeach</i></p>
+    </footer>
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+    </body>
+    <script>
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        for (var i = 0; i < 10; i++){
+            var img = document.getElementsByClassName("mimage")[i];
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        }
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+    </script>
+    
+</html>

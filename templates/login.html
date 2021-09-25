@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style/style.css') }}"> 
+</head>
+<body>
+    <div class="Loginsystem">
+    <form action="/login" method="POST">
+        <div class="si-icon"><i class="fas fa-sign-in-alt"></i></div>
+        <input type="username" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password" required>
+        <input id='login' type="submit" value="Login">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p style=color:red; id="msg">{{msg}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+    </form>
+    <p class='rgtlink'>First-time?
+    <a style='color:rgb(45, 59, 131);' href = "/register">Click here to register</a>
+    </p>
+    </div>
+</body>
+</html>
